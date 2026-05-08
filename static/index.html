@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>i-love-docs</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <!-- Upload Screen -->
+    <section id="upload-screen">
+        <div id="drop-zone">
+            <div class="icon">📄</div>
+            <h1>i-love-docs</h1>
+            <p class="subtitle">Upload a Word document to start editing with AI</p>
+            <p class="hint">.docx files only</p>
+            <input type="file" id="file-input" accept=".docx" class="hidden">
+            <button id="choose-btn">Choose .docx file</button>
+            <label class="drag-hint">or drag and drop here</label>
+        </div>
+    </section>
+
+    <!-- Editor Screen -->
+    <section id="editor-screen" class="hidden">
+        <div id="top-bar">
+            <span id="doc-filename">document.docx</span>
+            <div class="top-btns">
+                <button id="new-btn">+ New File</button>
+                <button id="download-btn">⬇ Download</button>
+            </div>
+        </div>
+        <div id="main-layout">
+            <div id="doc-panel">
+                <div id="doc-content">
+                    <!-- Mammoth.js will render content here -->
+                </div>
+            </div>
+            <div id="chat-panel">
+                <div id="chat-messages">
+                    <!-- Bubbles appear here -->
+                </div>
+                <div id="chat-input-row">
+                    <textarea id="msg-input" placeholder="Ask AI to edit the document..." rows="1"></textarea>
+                    <button id="send-btn">Send</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+    <script src="/static/app.js"></script>
+</body>
+</html>
